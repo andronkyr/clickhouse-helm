@@ -34,10 +34,10 @@ clickhouse:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
-    # storageClass: "ssd"
+    storageClass: "longhorn"
     accessModes:
       - ReadWriteOnce
-    size: 1Gi
+    size: 3Gi
 
   ## Node selector
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
@@ -82,7 +82,7 @@ zookeeper:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
-    # storageClass: "ssd"
+    storageClass: "longhorn"
     accessModes:
       - ReadWriteOnce
     size: 1Gi
@@ -101,7 +101,7 @@ zookeeper:
 
 # tabix.io web UI
 tabix:
-  enabled: false
+  enabled: true
   lb:
     enabled: false
     port: 8088
